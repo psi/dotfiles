@@ -7,9 +7,9 @@ GH_FINGERPRINT="|1|kn6qRgJKNp8dlJi3VP8Y8OB1uhs=|A232nYxdt8o9Vx7/qtl6PTS3mgE= ssh
 grep "$GH_FINGERPRINT" ~/.ssh/known_hosts >/dev/null 2>&1
 
 if [ $? != 0 ]; then
-  cat <<-EOT >>~/.ssh/known_hosts
+  cat <<EOT >>~/.ssh/known_hosts
 $GH_FINGERPRINT
-  EOT
+EOT
 fi
 
 # Get my dotfiles

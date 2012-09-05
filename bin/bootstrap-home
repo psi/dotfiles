@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Put GitHub's fingerprint into ~/.ssh/known_hosts so I don't
+# have to type 'yes' when checking out the repository.
+GH_FINGERPRINT="|1|kn6qRgJKNp8dlJi3VP8Y8OB1uhs=|A232nYxdt8o9Vx7/qtl6PTS3mgE= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=="
+
+grep "$GH_FINGERPRINT" ~/.ssh/known_hosts >/dev/null 2>&1
+
+if [ $? != 0 ]; then
+  cat <<-EOT >>~/.ssh/known_hosts
+$GH_FINGERPRINT
+  EOT
+fi
+
+# Get my dotfiles
+if [ ! -d ~/.git ]; then
+  git clone --no-checkout git@github.com:psi/dotfiles.git
+  mv dotfiles/.git ~/
+  echo '*' >>~/.git/info/exclude
+  rm -rf dotfiles
+  git reset --hard HEAD
+  git config core.homedir 1
+fi
+
+# Install vendor directories
+~/bin/update-vendored
+
+# Set my shell to zsh if it isn't already
+if [ `basename $SHELL` != "zsh" ]; then
+  chsh -s `which zsh`
+fi

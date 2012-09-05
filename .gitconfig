@@ -1,0 +1,37 @@
+[user]
+	name = JD Harrington
+	email = jd@streeteasy.com
+[alias]
+  ci = commit
+  st = !PAGER="" git status
+  co = checkout
+  chpk = cherry-pick
+  up = pull --rebase
+  put = !git up && git push origin HEAD
+  shove = !git stash && git put && git stash apply
+
+  # current_branch=`g branch | grep '^*' | awk '{print $2}'` && g checkout master && g up && g checkout $current_branch && g rebase master
+  
+[apply]
+  whitespace = nowarn
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+	excludesfile = /Users/jd/.gitignore
+	editor = /usr/bin/vim

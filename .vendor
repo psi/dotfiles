@@ -1,0 +1,11 @@
+--- 
+.oh-my-zsh: 
+  update_cmd: sh ~/.oh-my-zsh/tools/upgrade.sh
+  url: https://github.com/robbyrussell/oh-my-zsh.git
+
+.vim:
+  update_cmd: cd ~/.vim && rake && cd -
+  url: https://github.com/carlhuda/janus.git
+
+.janus/taskpaper.vim:
+  url: https://github.com/davidoc/taskpaper.vim.git

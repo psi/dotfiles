@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'yaml'
+
+vendored = YAML.load_file(File.expand_path("~/.vendor"))
+
+vendored.each do |dir, config|
+  unless File.directory?(dir)
+    system "git clone #{config["url"]} ~/#{dir}"
+  end
+
+  config["update_cmd"] ||= "cd ~/#{dir} && git pull --rebase && cd -"
+
+  system config["update_cmd"]
+end

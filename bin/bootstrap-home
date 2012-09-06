@@ -19,7 +19,7 @@ if [ ! -d ~/.git ]; then
   echo '*' >>~/.git/info/exclude
   rm -rf dotfiles
   git reset --hard HEAD
-  git config core.homedir 1
+  cd ~ && git config core.homedir 1 && cd -
 fi
 
 # Install vendor directories

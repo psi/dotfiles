@@ -2,6 +2,12 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/.zsh
 
+if which tmux >/dev/null 2>&1; then
+  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach || tmux new; exit
+  fi
+fi
+
 if [ -f ~/.secrets ]; then
   source ~/.secrets
 fi

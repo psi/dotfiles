@@ -5,8 +5,3 @@ set guifont=Inconsolata:h14
 if has("gui_running")
   set guioptions=-t
 endif
-
-function ChefUploadCookbook()
-  let cookbook_name = split(expand_path('%:h:p'), '\/')[-2]
-  execute '!cd ~/src/se/server && knife cookbook upload ' . cookbook_name 
-endfunction

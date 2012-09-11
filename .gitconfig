@@ -9,6 +9,7 @@
   up = pull --rebase
   put = !git up && git push origin HEAD
   shove = !git stash && git put && git stash apply
+  amend = commit --amend
 
   # current_branch=`g branch | grep '^*' | awk '{print $2}'` && g checkout master && g up && g checkout $current_branch && g rebase master
   

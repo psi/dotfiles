@@ -38,7 +38,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sb
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 
 alias se:pc='ssh -t app@admin-3f7 "cd /home/app/app/production/current && PATH=/usr/local/bin:$PATH ./script/console production"'
-which hub >/dev/null 2>&1 && alias git="hub $@"
 which rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
 alias knuck="knife cookbook upload $@"
 

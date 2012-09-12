@@ -1,1 +1,3 @@
-alias se:pc='ssh -t adm-644 "cd /home/app/app/production/current && sudo -u app -E ./script/console production"'
+export SE_APP_ROOT="/home/app/app/production/current"
+
+alias se:pc='ssh -t app@admin-3f7 "cd $SE_APP_ROOT && ./script/console production"'

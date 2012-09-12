@@ -1,6 +1,6 @@
 [user]
 	name = JD Harrington
-	email = jd@streeteasy.com
+	email = jd@jdharrington.net
 [alias]
   ci = commit
   st = !PAGER="" git status

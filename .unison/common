@@ -1,0 +1,4 @@
+auto = true
+maxthreads = 1
+
+ignore = Name .DS_Store

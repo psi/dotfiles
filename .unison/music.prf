@@ -1,0 +1,4 @@
+include common
+
+root = /Volumes/Data/Dropbox/Home/Music/iTunes/iTunes Media/Music
+root = ssh://hater//Volumes/Data/Dropbox/Home/Music/iTunes/iTunes Media/Music

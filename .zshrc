@@ -40,8 +40,6 @@ export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 which rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
 alias knuck="knife cookbook upload $@"
 
-export UNISONLOCALHOSTNAME=$(hostname -s)
-
 function is_homedir() {
   git config --get core.homedir > /dev/null
 }

@@ -1,6 +1,6 @@
 if [ $(hostname -s) = "ronin" ]; then
   export UNISON=$HOME/.unison
-end
+fi
 
 export UNISONLOCALHOSTNAME=$(hostname -s)
 

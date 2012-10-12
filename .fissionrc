@@ -1,0 +1,4 @@
+# Config for fission - a wrapper around VMware Fusion's vmrun command
+# https://github.com/thbishop/fission
+
+vmrun_bin: /Applications/VMware Fusion.app/Contents/Library/vmrun

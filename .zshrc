@@ -38,7 +38,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sb
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 
 which rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
-alias knuck="knife cookbook upload $@"
 
 function is_homedir() {
   git config --get core.homedir > /dev/null

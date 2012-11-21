@@ -49,4 +49,4 @@ function is_remote_host() {
 
 export NODE_PATH="/usr/local/lib/node"
 
-eval "$(/Users/jd/.se-tools/bin/se init -)"
+eval "$(${HOME}/.se-tools/bin/se init -)"

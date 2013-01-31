@@ -13,6 +13,7 @@ if [ -f ~/.secrets ]; then
 fi
 
 export EDITOR=vim
+set -o vi
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/

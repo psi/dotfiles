@@ -11,3 +11,5 @@ if [ -d ${CHEF_PKG_DIR} ]; then
 fi
 
 alias knuck="knife cookbook upload $@"
+
+eval "$(${HOME}/.chefvm/bin/chefvm init -)"

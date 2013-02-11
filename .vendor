@@ -12,3 +12,6 @@
 
 .se-tools:
   url: git@github.com:StreetEasy/se-tools.git
+
+.chefvm:
+  url: git://github.com/trobrock/chefvm.git

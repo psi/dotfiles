@@ -29,7 +29,7 @@ export ZSH_THEME="cloud"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
-plugins=(brew bundler cap gem git github osx rails ruby textmate vagrant)
+plugins=(brew bundler cap gem git github osx rails ruby textmate vagrant knife)
 
 source $ZSH/oh-my-zsh.sh
 export PROMPT='%{$fg_bold[cyan]%}$(is_remote_host && echo `hostname -s`" ")%{$fg[green]%}${PWD/#$HOME/~} %{$fg_bold[cyan]%}$(is_homedir || echo `git_prompt_info`" ")%{$fg_bold[blue]%}%{$reset_color%}%# '

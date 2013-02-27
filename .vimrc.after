@@ -2,6 +2,10 @@ set background=dark
 color solarized
 set guifont=Inconsolata:h14
 
+" Always us relative line numbers
+set relativenumber
+au BufRead,BufNewFile,BufWinEnter * set relativenumber
+
 if has("gui_running")
   set guioptions=-t
 endif

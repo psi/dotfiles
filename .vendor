@@ -7,6 +7,9 @@
   update_cmd: cd ~/.vim && rake && cd -
   url: https://github.com/carlhuda/janus.git
 
+.janus/gitgutter:
+  url: https://github.com/airblade/vim-gitgutter.git
+
 .janus/taskpaper.vim:
   url: https://github.com/davidoc/taskpaper.vim.git
 

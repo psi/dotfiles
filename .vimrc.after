@@ -9,6 +9,10 @@ au BufRead,BufNewFile,BufWinEnter * set relativenumber
 " Integrate with OS X clipboard
 set clipboard=unnamed
 
+" Copies the current selection to the OS X clipboard
+map <F2> :!pbcopy && pbpaste<CR>
+
+" Don't show tabs in GUI mode
 if has("gui_running")
   set guioptions=-t
 endif

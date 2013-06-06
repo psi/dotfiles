@@ -50,7 +50,6 @@ function is_remote_host() {
 
 export NODE_PATH="/usr/local/lib/node"
 
-eval "$(${HOME}/.se-tools/bin/se init -)"
 eval "$(${HOME}/.chefvm/bin/chefvm init -)"
 
 if [ -f /opt/boxen/env.sh ]; then

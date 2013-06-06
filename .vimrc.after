@@ -16,3 +16,6 @@ map <F2> :!pbcopy && pbpaste<CR>
 if has("gui_running")
   set guioptions=-t
 endif
+
+" Make the gutter match the background color
+highlight clear SignColumn

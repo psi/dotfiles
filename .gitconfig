@@ -35,4 +35,8 @@
   untracked = cyan
 [core]
 	excludesfile = /Users/jd/.gitignore
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
+[hub]
+  protocol = https
+[credential]
+	helper = osxkeychain

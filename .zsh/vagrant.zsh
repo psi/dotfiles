@@ -1,3 +1,5 @@
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+
 VAGRANT_PKG_DIR="/Applications/Vagrant"
 
 if [ -d ${VAGRANT_PKG_DIR} ]; then

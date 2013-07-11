@@ -66,3 +66,6 @@ eval "$(${HOME}/.chefvm/bin/chefvm init -)"
 if [ -f /opt/boxen/env.sh ]; then
   source /opt/boxen/env.sh
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

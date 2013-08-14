@@ -2,6 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/.zsh
 
+# Auto-launch tmux if it's installed and we're remote
 if which tmux >/dev/null 2>&1; then
   if [ "$SSH_TTY" != "" ] && [ "$TMUX" = "" ]; then
     tmux attach || tmux new; exit

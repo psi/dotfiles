@@ -1,6 +1,7 @@
 [user]
 	name = JD Harrington
-	email = jd@jdharrington.net
+  email = jd@jdharrington.net
+
 [alias]
   ci = commit
   st = !PAGER="" git status
@@ -11,8 +12,7 @@
   shove = !git stash && git put && git stash apply
   amend = commit --amend
 
-  # current_branch=`g branch | grep '^*' | awk '{print $2}'` && g checkout master && g up && g checkout $current_branch && g rebase master
-  
+
 [apply]
   whitespace = nowarn
 
@@ -39,4 +39,6 @@
 [hub]
   protocol = https
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
+[help]
+	autocorrect = 1

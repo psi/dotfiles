@@ -2,6 +2,14 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/.zsh
 
+SOCK="$HOME/.ssh/ssh_auth_sock"
+
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]; then
+  rm -f $SOCK
+  ln -sf $SSH_AUTH_SOCK $SOCK
+  export SSH_AUTH_SOCK=$SOCK
+fi
+
 # Auto-launch tmux if it's installed and we're remote
 if which tmux >/dev/null 2>&1; then
   if [ "$SSH_TTY" != "" ] && [ "$TMUX" = "" ]; then

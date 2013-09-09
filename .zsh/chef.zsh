@@ -12,7 +12,9 @@ fi
 
 alias knuck="knife cookbook upload $@"
 
-alias kc="kitchen converge"
-alias kdc="kitchen destroy && kitchen converge"
+alias kc="kitchen converge $@"
+alias kd="kitchen destroy $@"
+alias kdc="kitchen destroy $@ && kitchen converge $@"
+alias kl="kitchen list"
 
 #eval "$(${HOME}/.chefvm/bin/chefvm init -)"

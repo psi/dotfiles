@@ -12,9 +12,3 @@
 
 .janus/taskpaper.vim:
   url: https://github.com/davidoc/taskpaper.vim.git
-
-.se-tools:
-  url: git@github.com:StreetEasy/se-tools.git
-
-.chefvm:
-  url: git://github.com/trobrock/chefvm.git

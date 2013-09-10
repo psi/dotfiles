@@ -39,6 +39,8 @@ export ZSH_THEME="cloud"
 
 plugins=(brew bundler cap gem git github osx rails ruby textmate vagrant knife)
 
+fpath=(~/.zsh/completion $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 set -o vi

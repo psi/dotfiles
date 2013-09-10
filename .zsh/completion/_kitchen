@@ -1,0 +1,40 @@
+#compdef kitchen
+
+local -a _commands
+_commands=(
+  "console:Kitchen console!"
+  "converge:Converge one or more instances"
+  "create:Create one or more instances"
+  "destroy:Destroy one or more instances"
+  "help:Describe available commands or one specific command"
+  "init:Adds some configuration to your cookbook so Kitchen can rock"
+  "list:List all instances"
+  "login:Login to an instance"
+  "setup:Setup one or more instances"
+  "test:Test one or more instances"
+  "verify:Verify one or more instances"
+  "version:Print Kitchen's version information"
+)
+
+_arguments \
+  "1: :->cmds" \
+  "*:: :->args" && ret=0
+
+_kitchen_all_instances() {
+  bundled_kitchen list | grep -v Instance | awk '{print $1}'
+}
+
+case $state in
+  cmds)
+    _describe -t commands "kitchen command" _commands
+    return
+    ;;
+  args)
+    case $line[1] in
+      create)
+        compadd $(_kitchen_all_instances)
+        #_arguments \
+        #  '(--parallel)--parallel[Perform action against all matching instances in parallel]' \
+        #  '(--log-level)--log-level[Set the log level (debug, info, warn, error, fatal)]'
+    esac
+esac

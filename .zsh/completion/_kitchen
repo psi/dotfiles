@@ -18,7 +18,8 @@ _commands=(
 
 _arguments \
   "1: :->cmds" \
-  "*:: :->args" && ret=0
+  "2: :->instances" \
+  "*:: :->options" && ret=0
 
 # The sed at the end of these is to strip color chars from kitchen's output
 _kitchen_all_instances() {
@@ -33,22 +34,23 @@ case $state in
   cmds)
     _describe -t commands "kitchen command" _commands
     return
-    ;;
-  args)
+  ;;
+  instances)
     case $line[1] in
-      create)
+      (converge|create|list|setup|test|verify)
         compadd $(_kitchen_all_instances)
-        #_arguments \
-        #  '(--parallel)--parallel[Perform action against all matching instances in parallel]' \
-        #  '(--log-level)--log-level[Set the log level (debug, info, warn, error, fatal)]'
-        ;;
-      converge)
-        compadd $(_kitchen_all_instances)
-        ;;
-      destroy)
+      ;;
+      (destroy|login)
         compadd $(_kitchen_created_instances)
-        ;;
-      login)
-        compadd $(_kitchen_created_instances)
+      ;;
     esac
+    ;;
+  #options)
+  #  echo "x$line[1]x"
+  #  case $line[1] in
+  #    converge)
+  #      _arguments \
+  #        '(--parallel)--parallel[Perform action against all matching instances in parallel]' \
+  #        '(--log-level)--log-level[Set the log level (debug, info, warn, error, fatal)]'
+  #  esac
 esac

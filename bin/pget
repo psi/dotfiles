@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'uri'
+
+url = URI.parse(ARGV[0])
+
+url.user     = ENV['SEEDBOX_HTTP_USER']
+url.password = ENV['SEEDBOX_HTTP_PASSWORD']
+
+exec "lftp -e 'pget -n 10 #{url.to_s}; quit'"

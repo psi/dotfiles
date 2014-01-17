@@ -2,7 +2,7 @@ current_dir = Dir.pwd
 home_dir    = ENV['HOME']
 
 region = ENV['REGION'] || 'us-east-1'
-server = ENV['KNIFE_SERVER_NAME'] || 'chef'
+server = ENV['KNIFE_SERVER_NAME'] || 'chef11'
 user   = ENV['KNIFE_USER'] || ENV['USER']
 
 log_level                 :info
@@ -25,7 +25,7 @@ end
 
 knife[:region] = region
 
-knife[:aws_ssh_key_id]        = ENV['USER']
+knife[:aws_ssh_key_id]        = ENV['AWS_SSH_KEY_ID']
 knife[:aws_access_key_id]     = ENV['AWS_ACCESS_KEY_ID']
 knife[:aws_secret_access_key] = ENV['AWS_SECRET_ACCESS_KEY']
 

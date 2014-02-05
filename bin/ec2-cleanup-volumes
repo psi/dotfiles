@@ -1,0 +1,6 @@
+#!/bin/bash
+volumes=`ec2-describe-volumes --filter status=available | awk '{print $2}'`
+
+for volume in $volumes; do
+  ec2-delete-volume $volume
+done

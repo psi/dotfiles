@@ -1,5 +1,5 @@
 [user]
-	name = JD Harrington
+  name = JD Harrington
   email = jd@jdharrington.net
 
 [alias]
@@ -34,11 +34,11 @@
   changed = green
   untracked = cyan
 [core]
-	excludesfile = /Users/jd/.gitignore
+  excludesfile = /Users/jd/.gitignore
   editor = /usr/bin/vim
 [hub]
   protocol = https
 [credential]
   helper = osxkeychain
 [help]
-	autocorrect = 1
+  autocorrect = 1

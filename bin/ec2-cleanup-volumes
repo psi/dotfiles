@@ -1,4 +1,4 @@
 #!/bin/bash
-ec2-describe-volumes --filter status=available | \
-  awk '{print $2}' | \
-  xargs parallel -i bash -c "ec2-delete-volume {}" --
+ec2-describe-volumes --filter status=available \
+  | awk '{print $2}' \
+  | xargs parallel -i bash -c "ec2-delete-volume {}" --

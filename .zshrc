@@ -37,7 +37,21 @@ export ZSH_THEME="cloud"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
-plugins=(brew bundler cap gem git github osx rails ruby textmate vagrant knife)
+plugins=(
+  brew
+  bundler
+  cap
+  chruby
+  gem
+  git
+  github
+  knife
+  osx
+  rails
+  ruby
+  textmate
+  vagrant
+)
 
 fpath=(~/.zsh/completion $fpath)
 
@@ -50,8 +64,6 @@ export PROMPT='%{$fg_bold[cyan]%}$(is_remote_host && echo `hostname -s`" ")%{$fg
 export PATH=$HOME/bin:$HOME/.cabal/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/Cellar/python/2.7.1/bin
 
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
-
-which rbenv >/dev/null 2>&1 && eval "$(rbenv init -)"
 
 function is_homedir() {
   git config --get core.homedir > /dev/null

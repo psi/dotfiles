@@ -45,6 +45,7 @@ plugins=(
   gem
   git
   github
+  golang
   knife
   osx
   rails

@@ -1,6 +1,6 @@
 set background=dark
 color solarized
-set guifont=Inconsolata:h14
+set guifont=Inconsolata-dz:h14
 
 " Always us relative line numbers
 set relativenumber

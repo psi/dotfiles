@@ -12,7 +12,6 @@
   shove = !git stash && git put && git stash apply
   amend = commit --amend
 
-
 [apply]
   whitespace = nowarn
 
@@ -36,8 +35,6 @@
 [core]
   excludesfile = /Users/jd/.gitignore
   editor = /usr/bin/vim
-[hub]
-  protocol = https
 [credential]
   helper = osxkeychain
 [help]

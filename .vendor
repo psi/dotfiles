@@ -10,5 +10,9 @@
 .janus/gitgutter:
   url: https://github.com/airblade/vim-gitgutter.git
 
+.janus/pig.vim:
+  url: https://github.com/motus/pig.vim.git
+
 .janus/taskpaper.vim:
   url: https://github.com/davidoc/taskpaper.vim.git
+

@@ -1,6 +1,6 @@
 set background=dark
 color solarized
-set guifont=Inconsolata-dz:h14
+set guifont=Inconsolata-dz:h18
 
 " Always us relative line numbers
 set relativenumber
@@ -19,3 +19,8 @@ endif
 
 " Make the gutter match the background color
 highlight clear SignColumn
+
+" Allow for machine-specific differences
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

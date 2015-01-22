@@ -37,6 +37,9 @@ export ZSH_THEME="cloud"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
+# Don't attempt bundled versions of any commands that ChefDK ships
+IFS=$'\n' UNBUNDLED_COMMANDS=($(ls -1 /opt/chefdk/bin))
+
 plugins=(
   brew
   bundler

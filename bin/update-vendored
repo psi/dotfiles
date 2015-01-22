@@ -7,7 +7,7 @@ vendored.each do |dir, config|
   dir = File.expand_path("~/#{dir}")
 
   unless File.directory?(dir)
-    system "git clone #{config["url"]} #{dir}"
+    system "git clone --recursive #{config["url"]} #{dir}"
   end
 
   config["update_cmd"] ||= "cd #{dir} && git pull --rebase && cd -"

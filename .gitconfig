@@ -35,6 +35,8 @@
 [core]
   excludesfile = /Users/jd/.gitignore
   editor = /usr/bin/vim
+[hub]
+  protocol = git
 [credential]
   helper = osxkeychain
 [help]

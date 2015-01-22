@@ -7,6 +7,13 @@
   update_cmd: cd ~/.vim && rake && cd -
   url: https://github.com/carlhuda/janus.git
 
+.emacs.d:
+  update_cmd: git pull --rebase; git submodule sync; git submodule update
+  url: http://github.com/syl20bnr/spacemacs
+
+.janus/detectindent:
+  url: https://github.com/ciaranm/detectindent.git
+
 .janus/gitgutter:
   url: https://github.com/airblade/vim-gitgutter.git
 

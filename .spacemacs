@@ -6,6 +6,8 @@
   ;; List of configuration layers to load.
   dotspacemacs-configuration-layers '(themes-megapack)
 
+  dotspacemacs-configuration-layers '(osx)
+
   ;; A list of packages and/or extensions that will not be install and loaded.
   dotspacemacs-excluded-packages '()
 )

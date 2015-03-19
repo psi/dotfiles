@@ -33,7 +33,7 @@
   changed = green
   untracked = cyan
 [core]
-  excludesfile = /Users/jd/.gitignore
+	excludesfile = /Users/jd/.gitignore_global
   editor = /usr/bin/vim
 [hub]
   protocol = git

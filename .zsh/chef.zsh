@@ -11,6 +11,7 @@ if [ -d ${CHEF_PKG_DIR} ]; then
 fi
 
 alias knuck="knife cookbook upload $@"
+alias edb="knife data bag show $1 $2 --secret-file ~/.chef/encrypted_data_bag_secret"
 
 alias kc="kitchen converge $@"
 alias kd="kitchen destroy $@"

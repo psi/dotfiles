@@ -23,11 +23,11 @@ _arguments \
 
 # The sed at the end of these is to strip color chars from kitchen's output
 _kitchen_all_instances() {
-  bundled_kitchen list | grep -v Instance | awk '{print $1}' | sed 's/[^A-Za-z0-9\-].*$//g'
+  kitchen list | grep -v Instance | awk '{print $1}' | sed 's/[^A-Za-z0-9\-].*$//g'
 }
 
 _kitchen_created_instances() {
-  bundled_kitchen list | grep -v -e Instance -e '<Not Created>' | awk '{print $1}' | sed 's/[^A-Za-z0-9\-].*$//g'
+  kitchen list | grep -v -e Instance -e '<Not Created>' | awk '{print $1}' | sed 's/[^A-Za-z0-9\-].*$//g'
 }
 
 case $state in

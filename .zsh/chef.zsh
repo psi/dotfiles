@@ -16,6 +16,7 @@ alias edb="knife data bag show $1 $2 --secret-file ~/.chef/encrypted_data_bag_se
 alias kc="kitchen converge $@"
 alias kd="kitchen destroy $@"
 alias kdc="kitchen destroy $@ && kitchen converge $@"
+alias kv="kitchen verify $@"
 alias kl="kitchen list"
 
 #eval "$(${HOME}/.chefvm/bin/chefvm init -)"

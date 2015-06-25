@@ -1,3 +1,5 @@
+rm ~/.zcompdump*
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=~/.zsh
@@ -41,6 +43,7 @@ export ZSH_THEME="cloud"
 IFS=$'\n' UNBUNDLED_COMMANDS=($(ls -1 /opt/chefdk/bin))
 
 plugins=(
+  autoenv
   brew
   bundler
   cap

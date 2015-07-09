@@ -1,5 +1,5 @@
 set background=dark
-color solarized
+color smyck
 set guifont=Inconsolata-dz:h18
 
 " Always us relative line numbers

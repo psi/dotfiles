@@ -1,8 +1,6 @@
 function b2d-shell-init() {
-  machine_name=${1:-docker}
-
-  if ! boot2docker status $machine_name | grep -q running; then
-    boot2docker start $machine_name
+  if ! boot2docker status | grep -q running; then
+    boot2docker start
   fi
 
   eval $(boot2docker shellinit docker 2>/dev/null)

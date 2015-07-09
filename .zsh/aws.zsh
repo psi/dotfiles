@@ -16,3 +16,7 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars"
 export AWS_AUTO_SCALING_HOME="/usr/local/Library/LinkedKegs/auto-scaling/jars"
+
+# Completions for awscli
+[ -f /usr/local/share/zsh/site-functions/_aws ] && \
+  source /usr/local/share/zsh/site-functions/_aws

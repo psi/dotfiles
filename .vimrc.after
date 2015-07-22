@@ -20,6 +20,9 @@ endif
 " Make the gutter match the background color
 highlight clear SignColumn
 
+" Disable goofy-ass quote hiding
+let g:vim_json_syntax_conceal = 0
+
 " Allow for machine-specific differences
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

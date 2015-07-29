@@ -48,6 +48,8 @@ plugins=(
   bundler
   cap
   chruby
+  docker
+  docker-compose
   gem
   git
   github

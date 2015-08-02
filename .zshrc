@@ -1,4 +1,5 @@
-rm ~/.zcompdump*
+# Someday, I will understand this.
+rm ~/.zcompdump* >/dev/null 2>&1 || true
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh

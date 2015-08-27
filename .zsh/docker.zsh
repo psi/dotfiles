@@ -9,6 +9,17 @@ function docker-machine-shell-init() {
   eval $(docker-machine env ${machine_name} 2>/dev/null)
 }
 
+function docker-machine-create() {
+  machine_name=${DOCKER_MACHINE:-docker}
+
+  docker-machine create \
+    --driver vmwarefusion \
+    --vmwarefusion-memory-size 4096 \
+    --vmwarefusion-disk-size 20000 \
+    --vmwarefusion-cpu-count 2 \
+    ${machine_name}
+}
+
 function docker-load-images() {
   for image in ~/.docker/images/*.tar.gz; do
     echo "Loading $(basename ${image})..."

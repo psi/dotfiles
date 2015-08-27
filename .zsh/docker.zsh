@@ -1,9 +1,12 @@
-function b2d-shell-init() {
-  if ! boot2docker status | grep -q running; then
-    boot2docker start
+function docker-machine-shell-init() {
+  # Allow per-project machines with DOCKER_MACHINE env variable
+  machine_name=${DOCKER_MACHINE:-docker}
+
+  if ! docker-machine status ${machine_name} | grep -q Running; then
+    docker-machine start ${machine_name}
   fi
 
-  eval $(boot2docker shellinit docker 2>/dev/null)
+  eval $(docker-machine env ${machine_name} 2>/dev/null)
 }
 
 function docker-load-images() {
@@ -17,7 +20,7 @@ function docker-load-images() {
 function _docker() {
   if [ "$DOCKER_HOST" = "" ]; then
     echo "Initializing Docker env..."
-    b2d-shell-init
+    docker-machine-shell-init
   fi
 
   docker $@

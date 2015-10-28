@@ -1,12 +1,12 @@
-function docker-machine-shell-init() {
+function dinghy-shell-init() {
   # Allow per-project machines with DOCKER_MACHINE env variable
-  machine_name=${DOCKER_MACHINE:-docker}
+  #machine_name=${DOCKER_MACHINE:-docker}
 
-  if ! docker-machine status ${machine_name} | grep -q Running; then
-    docker-machine start ${machine_name}
+  if ! dinghy status | grep VM: | grep -q running; then
+    dinghy up
   fi
 
-  eval $(docker-machine env ${machine_name} 2>/dev/null)
+  eval $(dinghy shellinit 2>/dev/null)
 }
 
 function docker-machine-create() {
@@ -31,7 +31,7 @@ function docker-load-images() {
 function _docker() {
   if [ "$DOCKER_HOST" = "" ]; then
     echo "Initializing Docker env..."
-    docker-machine-shell-init
+    dinghy-shell-init
   fi
 
   docker $@

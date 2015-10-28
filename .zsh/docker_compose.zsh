@@ -6,7 +6,7 @@ function drake() {
 function _docker-compose() {
   if [ "$DOCKER_HOST" = "" ]; then
     echo "Initializing Docker env..."
-    docker-machine-shell-init
+    dinghy-shell-init
   fi
 
   docker-compose $@

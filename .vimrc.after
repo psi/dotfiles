@@ -23,6 +23,9 @@ highlight clear SignColumn
 " Disable goofy-ass quote hiding
 let g:vim_json_syntax_conceal = 0
 
+" Let Ctrl-P show hidden files, but ignore .git
+let g:ctrlp_show_hidden = 1
+
 " Allow for machine-specific differences
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

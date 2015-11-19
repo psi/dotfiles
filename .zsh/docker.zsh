@@ -38,3 +38,13 @@ function _docker() {
 }
 
 alias docker=_docker
+
+function _guard() {
+  if [ -f "$PWD/Dockerfile" ]; then
+    docker-compose run $(basename $PWD) guard
+  else
+    bundled_guard
+  fi
+}
+
+alias guard=_guard

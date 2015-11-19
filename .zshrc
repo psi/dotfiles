@@ -87,3 +87,6 @@ export NODE_PATH="/usr/local/lib/node"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# added by travis gem
+[ -f /Users/jd/.travis/travis.sh ] && source /Users/jd/.travis/travis.sh

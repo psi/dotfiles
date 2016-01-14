@@ -3,7 +3,7 @@ function ssh_ec2_instance_id() {
 }
 
 function _ssh() {
-  if [[ "$1" =~ "^i-[a-z0-9]{8}" ]]; then
+  if [[ "$1" =~ "^i-[a-z0-9]{8,17}" ]]; then
     ssh_ec2_instance_id $1
   else
     /usr/bin/ssh $@

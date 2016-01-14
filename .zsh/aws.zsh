@@ -11,3 +11,7 @@ export AWS_REGION=us-east-1
 # Completions for awscli
 [ -f /usr/local/share/zsh/site-functions/_aws ] && \
   source /usr/local/share/zsh/site-functions/_aws
+
+function ec2_ip_for_instance() {
+  aws ec2 describe-instances --instance-id ${1} | jq --raw-output '.[][].Instances[].PublicIpAddress'
+}

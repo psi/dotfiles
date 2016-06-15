@@ -41,3 +41,7 @@
   helper = osxkeychain
 [help]
   autocorrect = 1
+[rebase]
+  autostash = 1
+[diff]
+  compactionHeuristic = yes

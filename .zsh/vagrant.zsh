@@ -1,5 +1,5 @@
 # This seems to be causing me enough grief these days.
-#export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
 VAGRANT_PKG_DIR="/Applications/Vagrant"
 

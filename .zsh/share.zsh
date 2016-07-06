@@ -1,4 +1,4 @@
 function share() {
-  zip -r /Volumes/Data/Dropbox/Public/$(basename ${1}).zip $@
-  echo "https://dl.dropbox.com/u/211124/$(basename ${1}).zip" | pbcopy
+  zip -r ~/Dropbox/Public/$(basename ${1}).zip $@
+  echo "https://dl.dropboxusercontent.com/u/211124/$(basename ${1} | sed 's/\ /%20/g').zip" | pbcopy
 }

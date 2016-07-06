@@ -18,5 +18,6 @@ alias kd="kitchen destroy $@"
 alias kdc="kitchen destroy $@ && kitchen converge $@"
 alias kv="kitchen verify $@"
 alias kl="kitchen list"
+alias kcv="kitchen converge $@ && kitchen verify $@"
 
 #eval "$(${HOME}/.chefvm/bin/chefvm init -)"

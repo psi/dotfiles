@@ -40,7 +40,9 @@ function _docker() {
 alias docker=_docker
 
 function _guard() {
-  if [ -f "$PWD/Dockerfile" ]; then
+  if [ "${1}" != "" ] && [ -f "${1}/Dockerfile" ]; then
+    docker-compose run $(basename ${1}) guard
+  elif [ -f "$PWD/Dockerfile" ]; then
     docker-compose run $(basename $PWD) guard
   else
     bundled_guard

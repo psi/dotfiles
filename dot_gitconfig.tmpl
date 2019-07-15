@@ -1,0 +1,51 @@
+[user]
+  name = "{{ .name -}}"
+  email = "{{ .email -}}"
+
+[alias]
+  ci = commit
+  st = !PAGER="" git status
+  co = checkout
+  chpk = cherry-pick
+  up = pull --rebase
+  put = !git up && git push origin HEAD
+  shove = !git stash && git put && git stash apply
+  amend = commit --amend
+
+[apply]
+  whitespace = nowarn
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+  excludesfile = {{ .chezmoi.homedir -}}/.gitignore_global
+  editor = /usr/bin/vim
+[hub]
+  protocol = git
+{{ if eq .chezmoi.os "darwin" -}}
+[credential]
+  helper = osxkeychain
+{{ end -}}
+[help]
+  autocorrect = 1
+[pager]
+  branch = false
+[rebase]
+  autostash = 1
+[diff]
+  compactionHeuristic = yes

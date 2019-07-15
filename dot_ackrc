@@ -1,0 +1,5 @@
+--ignore-dir=.bundle
+--ignore-dir=.kitchen
+--ignore-dir=log
+--ignore-dir=.git
+--ignore-dir=.terraform

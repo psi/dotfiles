@@ -1,0 +1,31 @@
+# Zplug complains if I have `git` aliased to `hub` here. :face_with_rolling_eyes:
+unalias git 2>/dev/null
+export ZPLUG_HOME="/usr/local/opt/zplug"
+source $ZPLUG_HOME/init.zsh
+
+zplug 'lib/history', from:oh-my-zsh
+zplug 'plugins/chruby', from:oh-my-zsh
+zplug 'plugins/git', from:oh-my-zsh
+zplug 'plugins/github', from:oh-my-zsh
+
+zplug 'zdharma/fast-syntax-highlighting'
+
+zplug "mafredri/zsh-async", defer:0
+zplug "sindresorhus/pure", use:pure.zsh, as:theme
+
+#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "~/.zsh", from:local
+
+if ! zplug check --verbose; then
+  zplug install
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
+# Vi-mode editing
+bindkey -v
+export KEYTIMEOUT=1
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/Cellar/tfenv/1.0.1/versions/0.11.14/terraform terraform

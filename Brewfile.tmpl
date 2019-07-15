@@ -1,0 +1,20 @@
+{{- if eq .chezmoi.os "darwin" -}}
+tap "koekeishiya/homebrew-formulae" # ChunkWM
+tap "twpayne/homebrew-taps"         # Chezmoi
+
+brew "ack"
+brew "chunkwm"
+brew "direnv"
+brew "eksctl"
+brew "fzf"
+brew "jq"
+brew "neovim"
+brew "vault"
+brew "yaml2json"
+brew "zplug"
+
+mas "1Password", id: 1333542190
+
+mas "Deliveries", id: 924726344
+mas "Paprika", id: 1303222628
+{{- end -}}

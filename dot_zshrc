@@ -14,7 +14,7 @@ zplug "mafredri/zsh-async", defer:0
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
 
 #zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "~/.zsh", from:local
+zplug "~/.zsh", from:local, use:"*.zsh"
 
 if ! zplug check --verbose; then
   zplug install

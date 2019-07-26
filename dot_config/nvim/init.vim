@@ -11,6 +11,17 @@ let g:terraform_fmt_on_save=1
 
 Plug 'tpope/vim-sleuth'
 
+Plug 'towolf/vim-helm'
+
+Plug 'w0rp/ale'
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'json': ['jq'],
+\   'yaml': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
 Plug 'airblade/vim-gitgutter'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -39,4 +50,3 @@ set clipboard=unnamed
 
 " Make the gutter match the background color
 highlight clear SignColumn
-

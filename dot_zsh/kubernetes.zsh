@@ -29,3 +29,6 @@ add-zsh-hook precmd set-kubeconfig
 function kube-shell() {
   kubectl run --generator=run-pod/v1 shell-$(whoami)-$(random-id) --labels app=netshoot --rm -i --tty --image jdharrington/toolbox $@ -- /bin/bash
 }
+
+# This lets octant work with my munged together KUBECONFIG env variable
+alias octant="octant --kubeconfig ${HOME}/.kube/conf.d/$(kubectl config current-context).yaml"

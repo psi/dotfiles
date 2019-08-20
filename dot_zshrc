@@ -5,6 +5,7 @@ source $ZPLUG_HOME/init.zsh
 
 zplug 'lib/history', from:oh-my-zsh
 zplug 'plugins/chruby', from:oh-my-zsh
+zplug 'plugins/fzf', from:oh-my-zsh
 zplug 'plugins/git', from:oh-my-zsh
 zplug 'plugins/github', from:oh-my-zsh
 
@@ -29,3 +30,10 @@ export KEYTIMEOUT=1
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/Cellar/tfenv/1.0.1/versions/0.11.14/terraform terraform
+
+# TODO: Figure outa better way to display this, with current namespace
+#function iterm2_print_user_vars() {
+#  iterm2_set_user_var kubecontext $(kubectl config current-context)
+#}
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

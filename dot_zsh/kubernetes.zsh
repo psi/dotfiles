@@ -27,5 +27,5 @@ function set-kubeconfig {
 add-zsh-hook precmd set-kubeconfig
 
 function kube-shell() {
-  kubectl run --generator=run-pod/v1 shell-$(whoami)-$(random-id) --labels app=netshoot --rm -i --tty --image nicolaka/netshoot $@ -- /bin/bash
+  kubectl run --generator=run-pod/v1 shell-$(whoami)-$(random-id) --labels app=netshoot --rm -i --tty --image jdharrington/toolbox $@ -- /bin/bash
 }

@@ -1,0 +1,55 @@
+{{- if eq .chezmoi.os "darwin" -}}
+brew "ack"
+brew "amazon-ecs-cli"
+brew "consul"
+brew "diff-so-fancy"
+brew "direnv"
+brew "docker-credential-helper-ecr"
+brew "fzf"
+brew "grpcurl"
+brew "jq"
+brew "kind"
+brew "kubectx"
+brew "krew"
+brew "neovim"
+brew "octant"
+brew "prettier"
+brew "protoc-gen-go"
+brew "ripgrep"
+brew "tfenv"
+brew "vault"
+brew "wget"
+brew "yaml2json"
+brew "yarn"
+brew "youtube-dl"
+brew "yq"
+brew "zplug"
+
+brew "derailed/k9s/k9s"
+
+tap "koekeishiya/homebrew-formulae"
+brew "chunkwm"
+
+tap "twpayne/homebrew-taps"
+brew "chezmoi"
+
+tap "weaveworks/tap"
+brew "eksctl"
+
+tap "aylei/tap"
+brew "kubectl-debug"
+
+tap "windmilleng/tap"
+brew "tilt"
+
+tap "streamlio/homebrew-formulae"
+brew "pulsar"
+
+tap "chmouel/kss"
+brew "kss"
+
+mas "1Password", id: 1333542190
+mas "Deliveries", id: 924726344
+mas "Paprika", id: 1303222628
+mas "WireGuard", id: 1451685025
+{{- end -}}

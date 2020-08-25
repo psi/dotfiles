@@ -1,11 +1,11 @@
 # Zplug complains if I have `git` aliased to `hub` here. :face_with_rolling_eyes:
 unalias git 2>/dev/null
+unalias ls 2>/dev/null
 export ZPLUG_HOME="/usr/local/opt/zplug"
 source $ZPLUG_HOME/init.zsh
 
 zplug 'lib/history', from:oh-my-zsh
 zplug 'plugins/chruby', from:oh-my-zsh
-zplug 'plugins/fzf', from:oh-my-zsh
 zplug 'plugins/git', from:oh-my-zsh
 zplug 'plugins/github', from:oh-my-zsh
 
@@ -14,7 +14,6 @@ zplug 'zdharma/fast-syntax-highlighting'
 zplug "mafredri/zsh-async", defer:0
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
 
-#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "~/.zsh", from:local, use:"*.zsh"
 
 if ! zplug check --verbose; then
@@ -31,9 +30,18 @@ export KEYTIMEOUT=1
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/Cellar/tfenv/1.0.1/versions/0.11.14/terraform terraform
 
-# TODO: Figure outa better way to display this, with current namespace
-#function iterm2_print_user_vars() {
-#  iterm2_set_user_var kubecontext $(kubectl config current-context)
-#}
+# Edit command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+function iterm2_print_user_vars() {
+  iterm2_set_user_var kubecontext "⎈ $(kube-get-context)"
+  iterm2_set_user_var rapture_whoami "☁ $(rapture_whoami)"
+}
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+complete -o nospace -C /usr/local/Cellar/tfenv/2.0.0/versions/0.12.26/terraform terraform

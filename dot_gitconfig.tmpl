@@ -11,6 +11,8 @@
   put = !git up && git push origin HEAD
   shove = !git stash && git put && git stash apply
   amend = commit --amend
+  pause = !git add $(git rev-parse --show-toplevel) && git commit -m 'PAUSED BRANCH'
+  unpause = reset HEAD~1
 
 [apply]
   whitespace = nowarn
@@ -19,22 +21,31 @@
   branch = auto
   diff = auto
   status = auto
+  ui = true
 [color "branch"]
   current = yellow reverse
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
+  meta = 11
   frag = magenta bold
   old = red bold
   new = green bold
+  commit = yellow bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
 [core]
   excludesfile = {{ .chezmoi.homedir -}}/.gitignore_global
-  editor = /usr/bin/vim
+  editor = /usr/local/bin/nvim
+  pager = "diff-so-fancy | less --tabs=4 -RFX"
 [hub]
   protocol = git
 {{ if eq .chezmoi.os "darwin" -}}

@@ -9,6 +9,9 @@ Plug 'hashivim/vim-terraform'
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+
 Plug 'tpope/vim-sleuth'
 
 Plug 'towolf/vim-helm'
@@ -24,6 +27,7 @@ let g:ale_fix_on_save = 1
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'aliou/bats.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'connorholyday/vim-snazzy'
@@ -41,6 +45,10 @@ call plug#end()
 " Always use relative line numbers
 set relativenumber
 au BufRead,BufNewFile,BufWinEnter * set relativenumber
+
+" Make tabs display as 2 spaces
+set tabstop=2
+set softtabstop=2
 
 set background=dark
 set mouse=a

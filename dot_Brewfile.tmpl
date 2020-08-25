@@ -1,10 +1,12 @@
 {{- if eq .chezmoi.os "darwin" -}}
 brew "ack"
 brew "amazon-ecs-cli"
+brew "chezmoi"
 brew "consul"
 brew "diff-so-fancy"
 brew "direnv"
 brew "docker-credential-helper-ecr"
+brew "ffmpeg"
 brew "fzf"
 brew "grpcurl"
 brew "jq"
@@ -19,6 +21,7 @@ brew "ripgrep"
 brew "tfenv"
 brew "vault"
 brew "wget"
+brew "wireguard-tools"
 brew "yaml2json"
 brew "yarn"
 brew "youtube-dl"
@@ -27,11 +30,11 @@ brew "zplug"
 
 brew "derailed/k9s/k9s"
 
+tap "aws/tap"
+brew "aws-sam-cli"
+
 tap "koekeishiya/homebrew-formulae"
 brew "chunkwm"
-
-tap "twpayne/homebrew-taps"
-brew "chezmoi"
 
 tap "weaveworks/tap"
 brew "eksctl"
@@ -48,8 +51,18 @@ brew "pulsar"
 tap "chmouel/kss"
 brew "kss"
 
-mas "1Password", id: 1333542190
+tap "instructure-bridge/truss-cli"
+brew "truss-cli"
+
+tap "instructure-bridge/bridge-vpn-cli"
+brew "bridge-vpn-cli"
+
+cask "emacs"
+cask "session-amanager-plugin"
+
+mas "1Password",  id: 1333542190
 mas "Deliveries", id: 924726344
-mas "Paprika", id: 1303222628
-mas "WireGuard", id: 1451685025
+mas "Paprika",    id: 1303222628
+mas "Tailscale",  id: 1475387142
+mas "WireGuard",  id: 1451685025
 {{- end -}}
